@@ -1,28 +1,31 @@
-# aws-billing
+# aws-billing-slack-notify
 
-## abstract
-This project was created by `sam init` command.
+## Abstract
+This project executes auto slack notification by using Serverless Application Mode(SAM).
 
-
-## deploy
+## Build
 
 ```bash
-sam build
-sam deploy --guided --parameter-overrides SlackWebUrl=[slack webhook URL]
+$ sam build
+```
+
+## Deploy
+
+```bash
+$ sam deploy --guided --parameter-overrides SlackWebUrl=[slack webhook URL]
+
+$  Stack Name [sam-app]: NotifyBillingSlack      
+$ AWS Region [ap-northeast-1]: 
+
+$ Parameter SlackWebhookUrl [hoge]: {target channel webhook}
+$ Image Repository for HelloWorldFunction : {target lambda ecr URI}
+
+$ Confirm changes before deploy [Y/n]: y
+$ Allow SAM CLI IAM role creation [Y/n]: y
+$ HelloWorldFunction may not have authorization defined, Is this okay? [y/N]: y
+$ Save arguments to configuration file [Y/n]: y
+$ SAM configuration file [samconfig.toml]: 
+$ SAM configuration environment [default]: 
 ```
 
 
-## deploy setting
-
-Stack Name [sam-app]: NotifyBillingSlack      
-AWS Region [ap-northeast-1]: 
-
-Parameter SlackWebhookUrl [hoge]: {target channel webhook}<br>
-Image Repository for HelloWorldFunction : {target lambda ecr URI}<br>
-
-Confirm changes before deploy [Y/n]: y<br>
-Allow SAM CLI IAM role creation [Y/n]: y<br>
-HelloWorldFunction may not have authorization defined, Is this okay? [y/N]: y<br>
-Save arguments to configuration file [Y/n]: y<br>
-SAM configuration file [samconfig.toml]: <br>
-SAM configuration environment [default]: <br>
